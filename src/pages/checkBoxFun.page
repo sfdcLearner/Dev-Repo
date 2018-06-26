@@ -1,0 +1,34 @@
+<apex:page standardController="Lead" extensions="checkBoxLeadExtension" >
+  <!-- Lead activity manager for BAE user -->
+<style type = "text/css">
+    .error{
+        color:red;
+        font-weight:bold;
+    }
+</style>  
+    <apex:form >    
+    <apex:commandButton action="{!saveActivity}" value="Save"/>
+    <apex:commandButton action="{!cancel}" value="Cancel"/>
+        <apex:pageBlock id="theBlock" >
+            <apex:pageBlockSection id="theSection" columns="1">
+                <apex:inputCheckbox label="Cold Call" selected="{!select1}" rendered="{!check1}">
+                <apex:actionSupport event="onchange"  action="{!reset1}" rerender="theBlock"/>                    
+                </apex:inputcheckbox>
+                <apex:inputCheckbox label="Appointment" selected="{!select2}" rendered="{!check2}">                    
+                <apex:actionSupport event="onchange"  action="{!reset2}" rerender="theBlock"/>                    
+                </apex:inputCheckbox>
+                <apex:inputCheckbox id="Proposal" label="Proposal" selected="{!select3}" rendered="{!check3}" >
+                    <apex:actionSupport event="onchange"  action="{!reset3}" rerender="theBlock"/>                    
+                </apex:inputcheckbox>
+                <apex:inputCheckbox label="Video" id="video" rendered="{!(select3 == true)}" selected="{!subSelect1}"/>
+                <apex:inputCheckbox label="Voice" rendered="{!(select3 == true)}" selected="{!subSelect2}"/>
+                <apex:inputCheckbox label="Data" rendered="{!(select3 == true)}" selected="{!subSelect3}"/>                
+<!--                <apex:inputCheckbox label="test" id = "test" onclick="test(this,'test')"/> -->
+                <apex:outputText styleClass="error" value="{!message}"></apex:outputText>
+            </apex:pageBlockSection>
+            <apex:outputLabel style="color: grey; style:bold">test field</apex:outputLabel> <br/>
+            <apex:outputText >Test field</apex:outputText><br/>
+            <h1 style="color: #404040;">test field</h1>
+        </apex:pageBlock>  
+    </apex:form> 
+</apex:page>

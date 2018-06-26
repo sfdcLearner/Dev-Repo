@@ -1,0 +1,16 @@
+<apex:page standardController="Solution" extensions="testCustomSettings">
+  <!-- Custom settings fun -->
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection rendered="{!if(flag,true,false)}">
+              <p>tesing 1st section</p>                
+          </apex:pageBlockSection>
+          <apex:pageBlockSection rendered="{!if(flag,true,false)}">
+              <p>testing 2nd section</p>
+              <apex:outputLabel title="testing">
+                  <apex:inputField value="{!solution.solution_date_time__c}"/>
+              </apex:outputLabel>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

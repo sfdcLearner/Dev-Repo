@@ -1,0 +1,9 @@
+<apex:page controller="MyApexClass" showHeader="true" sidebar="true">
+<apex:form >
+	<apex:outputText value="Testing something" />
+	<apex:commandButton value="Get Something" action="{!getMore}"/>
+	<apex:dataList value="{!accList}" var="a">
+		<apex:outputText value="{!a.Name}"/>
+	</apex:dataList>
+</apex:form>	
+</apex:page>

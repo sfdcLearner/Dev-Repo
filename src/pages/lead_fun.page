@@ -1,0 +1,9 @@
+<apex:page standardController="Lead" extensions="getSetFun">
+  <!-- understanding getter and setter methods -->
+    <apex:form >
+        <apex:outputText >Enter your name</apex:outputText>
+        <apex:inputText value="{!enteredName}"/>
+        <apex:commandButton action="{!clickButton}" value="submit"/>
+        <apex:inputText value="{!result}" rendered="true"/>
+    </apex:form>
+</apex:page>

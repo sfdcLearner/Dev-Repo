@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="item" type="Camping_Item__c"/>
+    <c:campingListItem item="{!v.item}" />
+</aura:component>

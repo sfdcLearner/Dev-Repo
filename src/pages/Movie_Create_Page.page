@@ -1,0 +1,11 @@
+<apex:page standardController="Movie__c" extensions="MovieExt" title="Create New Movie">
+  <apex:form >
+    <apex:pageBlock title="New Movie">
+        <apex:pageBlockSection >
+            <apex:repeat value="{!$ObjectType.Movie__c.FieldSets.Movie_Create_Fields}" var="f">                
+                <apex:inputField value="{!newmovie[f.fieldPath]}"/>
+            </apex:repeat>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

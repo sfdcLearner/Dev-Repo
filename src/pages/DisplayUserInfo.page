@@ -1,0 +1,5 @@
+<apex:page showHeader="false">
+  <apex:form ><apex:pageBlock >
+      <p>{!if(1>0,$User.FirstName,$User.LastName)} </p>
+  </apex:pageBlock></apex:form>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page controller="contactController" showHeader="true" sidebar="true">
+	<apex:form >
+		<apex:dataTable value="{!contactList}" var="c">
+			
+			<apex:column value="{!c.id}" headerValue="Identifier ">
+
+
+
+			</apex:column>
+
+			<apex:column value="{!c.name}" headerValue="Name">
+
+
+
+			</apex:column>
+
+		</apex:dataTable>
+	</apex:form>
+</apex:page>

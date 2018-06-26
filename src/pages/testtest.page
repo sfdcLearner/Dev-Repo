@@ -1,0 +1,3 @@
+<apex:page controller="mycontroller">
+ {!mystring},{!stringmethod1},{!stringmethod2},{!Mystring}
+</apex:page>

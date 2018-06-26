@@ -1,0 +1,39 @@
+<apex:page title="JQUERY" controller="Random1">
+<!--====================================JQUERY=======================================-->
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script>
+            //var_sfdcSessionId = '{!GETSESSIONID()}';
+             $(document).ready(function(){
+                $("button").click(function(){
+                    $("#p2").hide();
+                    $("#p1").text('test');
+                });
+            });
+        	
+        // JS REMOTING
+        	function clicked () {
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.Random1.remoteMethod}',
+                	function (result, event) {
+                    	if (event.status) {
+                        	document.getElementById('pTest').innerHTML = 'success!!!';
+                        } else if (event.type === 'exception') {
+                            //errors
+                        } else {
+                            //errors
+                        }
+                    }, 
+                    {escape: true}
+                );
+            }
+        </script>
+    </head>
+    <body>
+        <p Id="p1"> this is a parra</p>
+        <p Id="p2"> I will be gone if you click below!</p>
+        <p Id="pTest"> this is a parra</p>
+        <button onClick="clicked();">click me!</button>
+    </body> 
+<!--=====================================JQUERY========================================-->
+</apex:page>

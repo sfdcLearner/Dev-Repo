@@ -1,0 +1,23 @@
+<apex:page standardController="Contact">
+  <h1> My Page </h1>
+  <apex:tabPanel id="tabPanel1" rendered="true" title="First Tab Panel" width="1000" height="500" >
+      <apex:tab id="tabOne" label="First Tab" rendered="true" title="First Tab" >
+        <apex:form >  
+          <apex:pageBlock id="pageBlockOne" title="Page Block One">
+              <apex:pageBlockSection title="Page Block Section" columns="2">
+                  <apex:inputField value="{!Contact.firstname}" />
+                  <apex:inputField value="{!contact.phone}" />
+                  <apex:inputField value="{!Contact.email}" />
+              </apex:pageBlockSection>
+              <apex:pageBlockButtons id="pageBlockButton" >
+                  <apex:commandButton id="commandButtonOne" action="{!save}" title="Save" value="Save"/>
+              </apex:pageBlockButtons>
+          </apex:pageBlock>   
+        </apex:form>    
+      </apex:tab>
+      <apex:tab id="tabTwo" label="Second Tab" rendered="true" title="Second Tab" disabled="false" timeout="5">
+          
+      </apex:tab>
+
+  </apex:tabPanel>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Opportunity" extensions="testpageExtension">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputLabel >Lead URL</apex:outputLabel>
+            <apex:outputLink value="{!link}">leadURL</apex:outputLink><br/>
+            <apex:outputLabel >Lead Flag</apex:outputLabel>
+            <apex:inputcheckbox label="Same as Above" selected="{!check}" disabled="true"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

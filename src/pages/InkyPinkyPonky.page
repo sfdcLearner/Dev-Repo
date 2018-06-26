@@ -1,0 +1,23 @@
+<apex:page controller="InkyPinkyPonky">
+    <apex:form >
+        <apex:messages />
+        <apex:commandButton action="{!setPinky}" value="Set Pinky"/>
+        <apex:commandButton action="{!getPinky}" value="Get Pinky"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <apex:outputLabel value="Inky" />
+                    <apex:inputText value="{!inky}"/>
+                </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <apex:outputLabel value="Pinky"/>
+                    <apex:inputtext value="{!pinky}"/>
+                </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

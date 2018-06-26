@@ -1,0 +1,10 @@
+<apex:page standardController="Account" sidebar="false" showHeader="false">
+  <!-- playing around with pages 
+      <apex:outputText >First Name :</apex:outputText> {! $user.firstname} <br />-->
+    <!-- insufficient previlages error due to the following line-->
+      <apex:detail relatedList="false" rendered="false"/>
+          <apex:relatedList list="Contacts"/>
+          <apex:relatedList list="Opportunities" pageSize="5"/>  
+      {!$User.Email}
+      
+</apex:page>

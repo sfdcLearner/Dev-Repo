@@ -1,0 +1,10 @@
+<apex:page standardController="Contact">
+<apex:panelGrid columns="2" >
+                    <apex:pageBlock >
+                        <apex:pageBlockSection title="MSA Field">
+                            <apex:outputLabel value="Field Label" style="text-align:Right;font-size:11px;font-weight:bold;font-color:grey" />
+                            <apex:outputField value="{!Contact.Account.Name}" dir="LTR"/>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock> 
+</apex:panelGrid>
+</apex:page>

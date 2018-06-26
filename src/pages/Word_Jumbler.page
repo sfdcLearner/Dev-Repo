@@ -1,0 +1,14 @@
+<apex:page controller="WordJumbler">
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:form >
+                <apex:outputLabel >Enter Text</apex:outputLabel>
+                <apex:inputText title="Enter Text" label="Enter Text"/>
+                <apex:commandButton title="Submit" value="Submit" action="{!Submit}"/>
+            </apex:form>
+            <apex:dataList value="{!randomStrings}" var="r">
+            	<apex:outputText value="{!r}"></apex:outputText>
+            </apex:dataList>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

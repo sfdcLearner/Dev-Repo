@@ -1,0 +1,9 @@
+<apex:page sidebar="false" standardController="Contact">
+  <!-- ContactView Trailhead challenge -->
+  <apex:form >
+              <h3>Contact Information</h3><br/>
+              First Name   :{!Contact.FirstName} <br/>
+              Last Name    :{!contact.lastname}  <br/>
+              Contact Owner:{!contact.owner.email}
+  </apex:form>
+</apex:page>

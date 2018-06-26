@@ -1,0 +1,32 @@
+<apex:page standardController="Movie__c" extensions="MovieExt" sidebar="false">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        var x={!Movie__c.pra_blu_meter__c}/100;
+        $(document).ready(function(){
+            $("#div1").fadeOut("3000");
+            $("#div1").fadeIn("3000");
+             $("#div1").fadeTo("slow", x);
+        });
+    </script>
+    <apex:pageBlock id="theBlock" title="Movie" >
+        <apex:pageBlockSection id="theMovieSection" title="Movie Detail">
+            <apex:repeat value="{!$ObjectType.Movie__c.FieldSets.Movie_Fieldset1}" var="df">
+                <apex:outputField value="{!displayFields1[df.FieldPath]}" /><br/>
+            </apex:repeat>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Pra-Blu Meter</apex:outputLabel>
+                <div id="div1" style="width:25px;height:15px;background-color:Red;">
+                    <h1>{!Movie__c.Pra_Blu_Meter__c}%</h1>
+                </div>
+            </apex:pageBlockSectionItem>
+<!--            <apex:pageBlockTable value="{!$ObjectType.Movie__c.FieldSets.Movie_Fieldset1}" var="f">
+                <apex:column value="{!f}">
+                    <apex:facet name="header">Name</apex:facet>
+                </apex:column>
+                <apex:column value="{!f.Label}">
+                    <apex:facet name="header">Label</apex:facet>
+                </apex:column>
+            </apex:pageBlockTable> -->
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
