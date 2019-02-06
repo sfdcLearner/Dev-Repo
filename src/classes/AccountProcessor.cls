@@ -11,7 +11,12 @@ public class AccountProcessor {
             for (Account ac : accounts) {
                 ac.Number_of_Contacts__c = contactCountMap.get(ac.Id);
             }
-            update accounts;  
+            update accounts;
         }
+    }
+
+    public void somemethod () {
+
+        system.debug('+++');
     }
 }

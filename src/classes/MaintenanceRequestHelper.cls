@@ -1,12 +1,16 @@
 public class MaintenanceRequestHelper {
-    
+    public static Set<Id> triggerRunOnce = new SEt<Id> ();
     public static void updateWorkOrders (Map<Id,Case> caseMap, Boolean isAfter) {
         // update workorders
         Map<Id,case> casestoInsert = new Map<Id,case> ();
-        Map<Id, Work_part__c> relatedWP = new Map<Id, Work_part__c>([select id, equipment__r.maintenance_cycle__c, Maintenance_request__c from work_part__c where Maintenance_Request__c In: caseMap.keySet()]);
-        List<AggregateResult> ars = [select count(id) c, min(equipment__r.maintenance_cycle__c) m, Maintenance_Request__c from work_part__c where Maintenance_Request__c In: caseMap.keySet() group by Maintenance_Request__c];
-        system.debug('ars++' + ars);
-        system.debug('rWP++' + relatedWP);
+        
+        Map<Id, Work_part__c> relatedWP = new Map<Id, Work_part__c>(
+            														[select id, equipment__r.maintenance_cycle__c, Maintenance_request__c 
+                                                                     from work_part__c where Maintenance_Request__c In: caseMap.keySet()]);
+        
+        List<AggregateResult> ars = [select count(id) c, min(equipment__r.maintenance_cycle__c) m, Maintenance_Request__c 
+                                     from work_part__c where Maintenance_Request__c In: caseMap.keySet() group by Maintenance_Request__c];
+
         Map<Id,AggregateResult> aggregateResultMap = new Map<Id,AggregateResult> ();
         for (aggregateResult ar : ars) {
             aggregateResultMap.put((Id)ar.get('Maintenance_Request__c'), ar);
@@ -29,12 +33,13 @@ public class MaintenanceRequestHelper {
             }
                 insert casestoInsert.values();
         }
-        if (isAfter) {
-            for (Work_Part__c wp : relatedWP.values()) {
+        /*system.debug('casestoInsert' + casestoInsert + trigger.isAfter);
+        if (casestoInsert.size() > 0) {
+            for (Work_Part__c wp : relatedWP.values()) { system.
                 wp.Maintenance_Request__c = casesToInsert.get(wp.Maintenance_Request__c).Id;
             }
             update relatedWP.values();
-        }
+        }*/
     }        
     
 }

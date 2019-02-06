@@ -15,8 +15,4 @@ public class ExcelWriter {
         insert newatt;
         xsw.close();
     }
-
-    public static void somemethod() {
-        system.debug('Anydatatype_msg');
-    }
 }

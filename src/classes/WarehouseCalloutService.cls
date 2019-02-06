@@ -30,7 +30,16 @@ public with sharing class WarehouseCalloutService {
             }
             if (products.size() > 0) 
                 upsert products;
+            system.debug('insertedProducts' + products);
         }
     }
-
+		
+    public static integer add (integer num1, integer num2) {
+        integer sum = num1 + num2;
+        return sum;
+    }
+    
+    public integer multiply (integer num1, integer num2) {
+        return num1 * num2;
+    }
 }

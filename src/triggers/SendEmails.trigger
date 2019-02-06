@@ -1,6 +1,6 @@
 trigger SendEmails on Opportunity (before insert, before update,after insert, after update,before delete, after delete, after undelete) {
 
-	if(trigger.isAfter){
+    if(trigger.isAfter){
         if(trigger.isInsert){
             GenericController.OpportunityAfterInsert(trigger.new, trigger.newMap);
             
@@ -8,5 +8,5 @@ trigger SendEmails on Opportunity (before insert, before update,after insert, af
         if(trigger.isUpdate){
             GenericController.OpportunityAfterUpdate(trigger.new, trigger.old, trigger.newMap, trigger.oldMap);
         }
-	}
+    }
 }

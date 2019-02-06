@@ -8,4 +8,6 @@ public class AssignContactToManager{
 
         insert contactToCreate;
     }
+
+    @isTest static void testt() {}
 }

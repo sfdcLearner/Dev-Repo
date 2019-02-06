@@ -6,10 +6,37 @@
 
 @IsTest
 private class InstallationTests {
-    static testmethod void testMaintenanceRequest() {
-        MaintenanceRequestHelper.updateWorkOrders();
+
+    @testSetup
+    static void setupData() {
+
+		Account testAcct = new Account();
+        testAcct.name = 'Test Account';
+        testAcct.type = 'Customer - Direct';
+        insert testAcct;
+        
+        Opportunity testOpp = new Opportunity(); 
+        testOpp.name = 'Test Opportunity';
+        testOpp.AccountId = testAcct.id;
+        testOpp.type = 'New Project';
+        testOpp.CloseDate = system.today();
+        testOpp.StageName = 'Negotiation/Review';
+        testOpp.Amount = 500000;
+        insert testOpp;
+        
     }
-    static testmethod void testWarehouseSync() {
-        WarehouseCalloutService.runWarehouseEquipmentSync();
-    }    
+
+    //Test empty trigger stub
+    static testmethod void testProjectTrigger() {
+        Opportunity opp = [SELECT Id FROM Opportunity LIMIT 1];
+        Project__c p = new Project__c();
+        p.Opportunity__c = opp.Id;
+        insert p;
+    }
+    
+    //Test empty service stub
+	static testmethod void testProjectCalloutServiceForInstall() {
+	    ProjectCalloutService.postOpportunityToPMS();
+	}
+
 }
