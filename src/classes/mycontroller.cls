@@ -7,4 +7,6 @@ public with sharing class mycontroller {
     public String mystring { get; set; }
     
     public String newString {get;}
+    
+    public String antExperiment {set;}
 }
