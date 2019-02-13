@@ -13,6 +13,22 @@
             </criteriaItems>
             <template>unfiled$public/SalesNewCustomerEmail</template>
         </ruleEntry>
+        <ruleEntry>
+         <assignedTo>jannelapratik7@gmail.com</assignedTo>
+         <assignedToType>User</assignedToType>
+         <criteriaItems>
+                <field>Lead.Description</field>
+                <operation>contains</operation>
+            </criteriaItems>
+      </ruleEntry>
+        <ruleEntry>
+         <assignedTo>jannelapratik7@gmail.com</assignedTo>
+         <assignedToType>User</assignedToType>
+         <criteriaItems>
+                <field>Lead.Email</field>
+                <operation>equals</operation>
+            </criteriaItems>
+      </ruleEntry>
     </assignmentRule>
     <assignmentRule>
         <fullName>Standard</fullName>
