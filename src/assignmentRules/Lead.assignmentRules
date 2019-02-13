@@ -38,6 +38,15 @@
                 <value>True</value>
             </criteriaItems>
         </ruleEntry>
+        <ruleEntry>
+         <assignedTo>jannelapratik7@gmail.com</assignedTo>
+         <assignedToType>User</assignedToType>
+         <criteriaItems>
+                <field>Lead.Company</field>
+                <operation>greaterOrEqual</operation>
+                <value>6</value>
+            </criteriaItems>
+      </ruleEntry>
     </assignmentRule>
     <assignmentRule>
         <fullName>Standard</fullName>
