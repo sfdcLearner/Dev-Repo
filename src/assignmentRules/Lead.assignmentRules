@@ -22,13 +22,13 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>jannelapratik7@gmail.com</assignedTo>
-            <assignedToType>User</assignedToType>
-            <criteriaItems>
+         <assignedTo>jannelapratik7@gmail.com</assignedTo>
+         <assignedToType>User</assignedToType>
+         <criteriaItems>
                 <field>Lead.Email</field>
                 <operation>equals</operation>
             </criteriaItems>
-        </ruleEntry>
+      </ruleEntry>
         <ruleEntry>
             <assignedTo>jannelapratik7@gmail.com</assignedTo>
             <assignedToType>User</assignedToType>
@@ -39,14 +39,14 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-         <assignedTo>jannelapratik7@gmail.com</assignedTo>
-         <assignedToType>User</assignedToType>
-         <criteriaItems>
+            <assignedTo>jannelapratik7@gmail.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
                 <field>Lead.Company</field>
                 <operation>greaterOrEqual</operation>
                 <value>6</value>
             </criteriaItems>
-      </ruleEntry>
+        </ruleEntry>
     </assignmentRule>
     <assignmentRule>
         <fullName>Standard</fullName>
